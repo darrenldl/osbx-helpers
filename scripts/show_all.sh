@@ -5,7 +5,7 @@ FILE=$1
 SKIP_TO=0
 
 while true; do
-  output=$(osbx show $FILE --skip-to $SKIP_TO)
+  output=$(osbx show $FILE --skip-to $SKIP_TO --silent 2)
 
   SKIP_TO=$(echo $output | grep -Po "(?<=Found at byte : )\d+")
 
